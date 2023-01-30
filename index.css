@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {}
+
+@layer base {
+    .html{
+        @apply font-Proximanova;
+    }
+}

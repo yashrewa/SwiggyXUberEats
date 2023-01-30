@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+:root{
+    --bg-color: #fff;
+    --text-color: #333;
+    --primary-color: #01c267;
+    --secondary-color: #97c1ad;
+}
+
+#container {
+    background-color: yellow;
+}
+
+
+
+
+.card {
+    padding: 2rem;
+    transition: all 0.1s ease;
+}
+.card:hover {
+    border: 2px solid black;
+    
+}
+
+
+.restaurant-list > div > a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+
+input[type=text].search-input {
+    height: 24px;
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+input[type=text] > search-input:focus {
+    border-top:0px black;
+}
+
+button > search-btn {
+    font-size: 15px;
+    background-color: var(--primary-color);
+    padding: 6px 24px;
+}
+.menu{
+    display:grid;
+    text-align: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.restaurant-logo{
+    display: flex;
+    justify-content: space-between;
+    padding-top:2rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
+
+
+
+.nav-items > ul > li:hover {
+    
+    background-color: var(--primary-color);
+}
+.menu-items > h1{
+    justify-content: center;
+}
+.menu-items-list > div {
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
+.menu-items-list > div > div {
+    display: flex;
+    padding-top:1rem;
+    padding-bottom:3rem;
+    border-bottom: 1px solid;
+    justify-content: space-between;
+    text-align: left;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.item-img > img {
+    width: 7rem;
+    height: 6rem;
+    border-radius: 10%;
+}
+.no-image{
+    color: lightgrey;
+    width: 7rem;
+    height: 6rem;
+}
+.item-name-price {
+    justify-content:left;
+    text-align: left;
+}
+.description {
+    color: grey;
+}
+.cuisines {
+    text-align: left;
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+.collapse-expand{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.collapse-expand > a{
+    display:inline-block;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+    border-radius: 15%;
+    text-decoration: solid;
+    color:white;
+    background-color: var(--primary-color);
+}
+.about-info{
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+.more-info{
+    padding-left: 15rem;
+    padding-right: 15rem;
+    margin-top:2rem;
+    text-align: center;
+}
+.class-profile{
+    padding-left: 15rem;
+    padding-right: 15rem;
+    padding-top: 4rem;
+    text-align: center;
+}
+.search-area{
+    margin-left: 15rem;
+    margin-right: 15rem;
+    margin-top:1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.weather-info{
+    margin-left: 35rem;
+    margin-right: 35rem;
+    padding: 2rem;
+    border: 2px solid rgb(203, 203, 203);
+    border-radius: 5%;
+    text-align: center;
+    background-color:lightblue;
+}
+#search-area-weather{
+    width: 20rem;
+    height: 2rem;
+    border: 2px solid rgb(203, 203, 203);
+}
+#search-btn-weather{
+    width: 10rem;
+    height: 2rem;
+    background-color:lightblue;
+    border: 1px solid rgb(203, 203, 203);
+    border-radius: 5%;
+    
+}

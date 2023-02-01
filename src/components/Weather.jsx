@@ -24,7 +24,7 @@ const Weather= () => {
         console.log(json)
         setAstronomy(json.astronomy);
     }
-
+//48.8567,2.3508
     
     return weather.length===0 && astronomy.length===0? <h1>Loading</h1>:(
         <>

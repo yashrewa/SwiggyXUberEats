@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/namastedev/namaste-react-live.git"
+    "url": "https://github.com/yashrewa/SwiggyXUberEats"
   },
   "author": "Akshay Saini",
   "license": "ISC",
   "bugs": {
-    "url": "https://bitbucket.org/namastedev/namaste-react-live/issues"
+    "url": "https://github.com/yashrewa/SwiggyXUberEats"
   },
-  "homepage": "https://bitbucket.org/namastedev/namaste-react-live#readme",
+  "homepage": "https://github.com/yashrewa/SwiggyXUberEats",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",

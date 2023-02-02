@@ -5,6 +5,7 @@
 
 # Node artifact files
 node_modules/
+.parcel-cache/
 
 # Compiled Java class files
 *.class
@@ -47,5 +48,3 @@ Thumbs.db
 *.wmv
 
 
-
-.parcel-cache

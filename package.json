@@ -4,7 +4,7 @@
   "description": "This is tribute to uberEats",
   "scripts": {
     "start": "parcel index.html",
-    "build:parcel": "parcel build index.html --public-url ./ --no-source-maps",
+    "build:parcel": "parcel build index.html --public-url --no-source-maps",
     "build": "npm run clean && npm run build:parcel",
     "test": "jest",
     "clean": "rm -rf dist/*"
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/yashrewa/SwiggyXUberEats"
   },
-  "homepage": "https://github.com/yashrewa/SwiggyXUberEats",
+  "homepage": "",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",

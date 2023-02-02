@@ -63,7 +63,7 @@ export default Body = () => {
         const json = await data.json();
         setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
         setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
-        // console.log(json.data)
+        console.log(json.data)
       } catch (error) {
         let json = error.json();
         console.log(json.status)

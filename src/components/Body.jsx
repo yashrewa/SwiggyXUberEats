@@ -14,6 +14,23 @@ function filterData(searchInput, restaurants) {
   return filterData;
 }
 
+function sortByDistance(restaurants){
+
+  const sorted = restaurants.sort((a, b) => a.data.deliveryTime - b.data.deliveryTime);
+  return sorted;
+}
+function sortByPrice(restaurants){
+
+  const sorted = restaurants.sort((a, b) => a.data.costForTwo/100 - b.data.costForTwo/100);
+  return sorted;
+}
+function sortByRating(restaurants){
+
+  const sorted = restaurants.sort((a, b) => b.data.avgRating - a.data.avgRating);
+  return sorted;
+}
+
+
 export default Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [fetchedcoords, setFetchedCoords] = useState({
@@ -22,9 +39,17 @@ export default Body = () => {
   });
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  
+  
   const { user, setUser } = useContext(UserContext);
-  const { username, email, DOB } = user;
   const { theme, setTheme } = useContext(Theme);
+  const { username, email, DOB } = user;
+  
+
+  
+
+
+
 
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({
@@ -43,7 +68,7 @@ export default Body = () => {
       });
     }
     getRestaurants();
-  }, [coords]);
+  },[coords]);
 
 
   async function getRestaurants(
@@ -61,9 +86,11 @@ export default Body = () => {
             "&page_type=DESKTOP_WEB_LISTING"
         );
         const json = await data.json();
+        // console.log(json.data?.cards[2]?.data?.data?.cards)
+
         setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
         setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
-        console.log(json.data)
+        
       } catch (error) {
         let json = error.json();
         console.log(json.status)
@@ -75,6 +102,7 @@ export default Body = () => {
   if (!useStatus) {
     return <div>Look's Link You're Offline</div>;
   }
+  // console.log(filteredRestaurants)
 
   return allRestaurants.length === 0 ? (
     <Shimmer />
@@ -92,12 +120,43 @@ export default Body = () => {
           className="bg-green-500 rounded-sm p-1 w-1/16 text-white text-base"
           onClick={() => {
             const data = filterData(searchInput, allRestaurants);
+            console.log(data);
             setFilteredRestaurants(data);
           }}
-        >
-          Search
+        >Search
         </button>
-        {theme === "light" ? (
+        <button
+          className="bg-green-500 rounded-sm mx-10 p-1 w-1/16 text-white text-base"
+          onClick={() => {
+            const newArr =[...filteredRestaurants]
+            const dist = sortByDistance(newArr);
+            console.log(dist);
+            setFilteredRestaurants(dist);
+          }}
+        > Delivery time
+        </button>
+        <button
+          className="bg-green-500 rounded-sm mx-10 p-1 w-1/16 text-white text-base"
+          onClick={() => {
+            const newArr2 =[...filteredRestaurants]
+            const price = sortByPrice(newArr2);
+            // console.log(dist);
+            setFilteredRestaurants(price);
+          }}
+        > By Price
+        </button>
+        <button
+          className="bg-green-500 rounded-sm mx-10 p-1 w-1/16 text-white text-base"
+          onClick={() => {
+            const newArr3 =[...filteredRestaurants]
+            const rating = sortByRating(newArr3);
+            // console.log(dist);
+            setFilteredRestaurants(rating);
+          }}
+        > By Rating
+        </button>
+       
+        {/* {theme === "light" ? (
           <button
             className="border border-black border-10 p-2 px-6 m-2"
             onClick={() => {
@@ -115,9 +174,9 @@ export default Body = () => {
           >
             light
           </button>
-        )}
+        )} */}
         {/* <button onClick={()=>setTheme({username: "set"})}>Hey</button> */}
-        <input value={user.username} onChange={(e)=> setUser({username: e.target.value}) }></input>
+        {/* <input value={user.username} onChange={(e)=> setUser({username: e.target.value}) }></input> */}
       </div>
       <div className="flex flex-wrap justify-around p-4 font-Sans-serif">
         {filteredRestaurants.forEach((element) => {

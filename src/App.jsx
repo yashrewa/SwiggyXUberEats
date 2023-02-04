@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, Provider, useState } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import ReactDOM, { createRoot } from "react-dom/client";
 import HeaderComponent from "./components/header";
 import Body from "./components/Body";
@@ -13,7 +13,8 @@ import Classprofile from "./components/Classprofile";
 import UserContext from './components/utils/UserContext';
 import Theme from "./components/utils/Theme";
 import UserLocationInfo from "./components/utils/UserLocationInfo";
-
+import { Provider } from "react-redux";
+import store from "./components/utils/store";
 // Composing Comopnentss
 
 const Weather = lazy(() => import("./components/Weather"));
@@ -28,7 +29,7 @@ const AppLayout = () => {
   const [theme, setTheme] = useState("light")
 
   return (
-    <>
+    <Provider store={store} >
       <UserContext.Provider value={{
         user: user,
         setUser: setUser,
@@ -42,7 +43,7 @@ const AppLayout = () => {
       <Footer />
       </Theme.Provider>
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 

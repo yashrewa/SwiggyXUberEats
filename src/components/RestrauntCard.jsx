@@ -1,5 +1,6 @@
 import { IMG_CDN_URL } from "../constants"
 
+
 export default RestrauntCard= ({name, cuisines, cloudinaryImageId, avgRating, deliveryTime, costForTwo, aggregatedDiscountInfo, coupon}) =>{
     return(
       <div className="p-8 block justify-between border-2 border-white border-solid hover:border-[#d3d5df] hover:shadow-lg ease-linear duration-200">

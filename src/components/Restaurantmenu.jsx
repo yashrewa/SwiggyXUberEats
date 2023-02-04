@@ -86,17 +86,17 @@ const RestaurantMenu = () => {
                       {items.description}
                     </div>
                   </div>
-                  <div>
+                  <div className="relative flex justify-center">
                     {!items.cloudinaryImageId ? (
-                      <div className="w-28 h-24"></div>
+                      <div className="w-40 h-auto"></div>
                     ) : (
                       <img
-                        className="w-28 h-24 z-0 border rounded-md"
+                        className="w-40 h-auto z-0 border rounded-md"
                         src={IMG_CDN_URL + items.cloudinaryImageId}
                       />
                     )}
                     <button
-                      className="bg-green-500 mx-4 p-0.5 rounded-md absolute z-50 text-white border-2 border-neutral-300"
+                      className="bg-green-500 mx-4 p-0.5 rounded-md absolute -bottom-4 text-white border-2 border-neutral-300"
                       onClick={() => handleAddItem(items)}
                     >
                       add item

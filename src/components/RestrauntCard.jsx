@@ -1,7 +1,7 @@
 import { IMG_CDN_URL } from "../constants"
 
 
-export default RestrauntCard= ({name, cuisines, cloudinaryImageId, avgRating, deliveryTime, costForTwo, aggregatedDiscountInfo, coupon}) =>{
+const RestrauntCard= ({name, cuisines, cloudinaryImageId, avgRating, deliveryTime, costForTwo, aggregatedDiscountInfo, coupon}) =>{
     return(
       <div className="p-8 block justify-between border-2 border-white border-solid hover:border-[#d3d5df] hover:shadow-lg ease-linear duration-200">
         <img className="w-full" src={IMG_CDN_URL + cloudinaryImageId}></img>
@@ -21,4 +21,4 @@ export default RestrauntCard= ({name, cuisines, cloudinaryImageId, avgRating, de
     )
   }
 
-  
+  export default RestrauntCard;

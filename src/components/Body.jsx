@@ -34,7 +34,7 @@ function sortByPrice(restaurants){
 }
 
 
-export default Body = () => {
+const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [fetchedcoords, setFetchedCoords] = useState({
     latitude: 28.6448,
@@ -183,7 +183,7 @@ export default Body = () => {
         </div>
       <div className="flex flex-wrap justify-around p-4 font-Sans-serif">
         {filteredRestaurants.forEach((element) => {
-          data = element?.data;
+          const data = element?.data;
           data.coupon = ["TRYNEW", "WELCOME50"];
           return data;
         })}
@@ -203,3 +203,5 @@ export default Body = () => {
     </div>
   );
 };
+
+export default Body

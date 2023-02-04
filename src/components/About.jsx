@@ -23,7 +23,7 @@ const Section = ({name, number, isVisible, setIsVisible}) => {
     );
 };
 
-export default About = () => {
+const About = () => {
     const [visibleSection, setIsVisibleSection] = useState("");
     return(
         <div>
@@ -48,3 +48,4 @@ export default About = () => {
         </div>
     )
 }
+export default About

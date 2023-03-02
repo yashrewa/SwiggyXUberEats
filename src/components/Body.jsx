@@ -193,7 +193,7 @@ const Body = () => {
               className="basis-auto lg:basis-1/4 p-6 px-8"
               key={restaurant.data.id}
             >
-              <Link to={"/restaurantmenu/" + restaurant.data.id}>
+              <Link to={"/restaurantmenu/" + restaurant?.data?.id}>
                 <RestrauntCard {...restaurant.data} />
               </Link>
             </div>

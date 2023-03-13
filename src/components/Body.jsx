@@ -6,6 +6,7 @@ import useOnline from "./utils/useOnline";
 import UserContext from "./utils/UserContext";
 import Theme from "./utils/Theme";
 import { useGeolocated } from "react-geolocated";
+import DedicatedCart from "./DedicatedCart";
 
 function filterData(searchInput, restaurants) {
   const filterData = restaurants.filter((restraunt) =>
@@ -82,7 +83,7 @@ const Body = () => {
     ) {
       try {
         const data = await fetch(
-          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=" +
+          "https://cors-anywhere.herokuapp.com/www.swiggy.com/dapi/restaurants/list/v5?lat=" +
             geoLocation.latitude +
             "&lng=" +
             geoLocation.longitude +
@@ -109,7 +110,8 @@ const Body = () => {
   return allRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div>
+    <div className="flex-1">
+      <DedicatedCart/>
       <div className="flex flex-wrap justify-center">
         <input
           type="text"
@@ -191,7 +193,7 @@ const Body = () => {
           return (
             <div
               className="basis-auto lg:basis-1/4 p-6 px-8"
-              key={restaurant.data.id}
+              key={restaurant?.data?.id}
             >
               <Link to={"/restaurantmenu/" + restaurant?.data?.id}>
                 <RestrauntCard {...restaurant.data} />

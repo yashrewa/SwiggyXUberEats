@@ -9,27 +9,15 @@ import Cart from "./Cart";
 import { useSelector } from "react-redux";
 
 const RestaurantMenu = () => {
-  const [selectedCatogory, setSelectedCategory] = useState("All")
+  // const [selectedCatogory, setSelectedCategory] = useState("All")
   const { resId } = useParams();
   const restaurant = useRestaurant(resId);
 
-  // const filterItemsByCategory = (items, category)=>{
-  //   if(category==="All"){
-  //     return items;
-  //   }
-  //   return items.filter((item)=>item.category===category)
-  // }
-
-  // const sortedItems = filterItemsByCategory(
-  //   Object.values(restaurant?.menu?.items), selectedCatogory
-  // );
-
   const dispatch = useDispatch();
-  // console.log(dispatch);
   const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
-  console.log(restaurant?.menu.items)
+  // console.log(restaurant?.menu.items)
 
   return !restaurant ? (
     <Shimmer />
@@ -87,14 +75,14 @@ const RestaurantMenu = () => {
                   ? "bg-green-500"
                   : "bg-neutral-200"
               } text-white text-sm font-medium mr-4 py-1 px-3 rounded-md`}
-              onClick={() => setSelectedCategory("All")}
+              // onClick={() => setSelectedCategory("All")}
             >
               All
             </button> */}
-        <div classname="px-20 w-3/5 justify-center">
+        <div>
           {Object.values(restaurant?.menu?.items).map((items) => {
             return (
-              <div className="pt-8 " key={items.resId}>
+              <div className="pt-8 " key={items?.id}>
                 <div className="flex border-b-2 border-neutral-300 justify-between mt-4 pb-4 w-6/12 mx-80">
                   <div>
                     <div className="item-name-price">

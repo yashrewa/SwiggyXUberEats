@@ -40,9 +40,9 @@ const AppLayout = () => {
       }}>
       <HeaderComponent />
       <Outlet />
-      <Footer />
       </Theme.Provider>
       </UserContext.Provider>
+      <Footer />
     </Provider>
   );
 };
